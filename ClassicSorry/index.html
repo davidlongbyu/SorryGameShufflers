@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sorry! Draw Pile</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></!--script-->
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="ClassicSorry.css">
+
+    <script src="ClassicSorry.js"></script>
+</head>
+<!-- Preload all of the card images using onload -->
+<body onload="loadImages(
+        'CardImages/cardSorry.png',
+        'CardImages/card-04.png',
+        'CardImages/card01.png',
+        'CardImages/card02.png',
+        'CardImages/card03.png',
+        'CardImages/card05.png',
+        'CardImages/card07.png',
+        'CardImages/card08.png',
+        'CardImages/card10.png',
+        'CardImages/card11.png',
+        'CardImages/card12.png')">
+
+    <div class="row">
+        <div class="col-sm-2">
+            <p></p>
+            <button type="button" class="btn btn-default" onclick="newGame()">New Game</button>
+        </div>
+        <div class="col-sm-5" id="drawPile">
+            <p></p>
+            <img onclick="drawCard()" src="CardImages/cardDraw.png" height="388" width="244" />
+            <div class="text-left" id="remainingCards">
+                Remaining cards: 44
+            </div>
+        </div>
+        <div class="col-sm-5" id="cardPile">
+            <p></p>
+            <img id="cardPileCard" src="CardImages/cardPile.png" height="388" width="244" />
+        </div>
+    </div>
+</body>
+</html>
