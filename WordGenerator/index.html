@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Finder</title>
+    <!-- Include Bootstrap CSS (you'll need to link to the Bootstrap CSS file) -->
+    <link rel="stylesheet" href="path-to-bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Finder</h1>
+        <form id="word-finder-form">
+            <div class="form-group">
+                <label for="input-letters">Enter Letters:</label>
+                <input type="text" class="form-control" id="input-letters" placeholder="Enter letters">
+            </div>
+            <div class="form-group">
+                <label for="dictionary-select">Select Dictionary:</label>
+                <select class="form-control" id="dictionary-select">
+                    <option value="wordle">Wordle</option>
+                    <option value="scrabble">Scrabble</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" id="find-words-button">Find Words</button>
+            <button type="button" class="btn btn-secondary" id="reset-button">Reset</button>
+        </form>
+        <div id="results">
+            <!-- Display results here -->
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (you'll need to link to the Bootstrap JS file) -->
+    <script src="path-to-bootstrap.js"></script>
+
+    <script>
+        document.getElementById("find-words-button").addEventListener("click", function() {
+            // Get user input values
+            const letters = document.getElementById("input-letters").value;
+            const dictionary = document.getElementById("dictionary-select").value;
+            
+            // Perform client-side word list generation and display results
+            const results = generateWordList(letters, dictionary);
+
+            // Display results
+            displayResults(results);
+        });
+
+        document.getElementById("reset-button").addEventListener("click", function() {
+            // Reset the form and results
+            document.getElementById("word-finder-form").reset();
+            document.getElementById("results").innerHTML = "";
+        });
+
+        // Client-side word list generation function (you need to implement this)
+        function generateWordList(letters, dictionary) {
+            // Implement word list generation based on client-side logic
+            // and return the results as an array
+            // Example logic:
+            const results = ["word1", "word2", "word3"]; // Replace with actual results
+            return results;
+        }
+
+        // Display results in the HTML
+        function displayResults(results) {
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = "<h3>Matching Words:</h3>";
+            const ul = document.createElement("ul");
+            results.forEach((word) => {
+                const li = document.createElement("li");
+                li.textContent = word;
+                ul.appendChild(li);
+            });
+            resultsContainer.appendChild(ul);
+        }
+    </script>
+</body>
+</html>
